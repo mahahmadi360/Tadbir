@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Web", "Mah.Tadbir.Web\Mah.Tadbir.Web.csproj", "{666ED7AE-4BB9-4D22-A603-8E3F7DAD9D55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Web", "src\Mah.Tadbir.Web\Mah.Tadbir.Web.csproj", "{666ED7AE-4BB9-4D22-A603-8E3F7DAD9D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Entity", "Mah.Tadbir.Etity\Mah.Tadbir.Entity.csproj", "{F2D6B83A-1655-4212-B95E-D05A288C831E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Entity", "src\Mah.Tadbir.Etity\Mah.Tadbir.Entity.csproj", "{F2D6B83A-1655-4212-B95E-D05A288C831E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.DAL.EF", "Mah.Tadbir.DAL.EF\Mah.Tadbir.DAL.EF.csproj", "{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.DAL.EF", "src\Mah.Tadbir.DAL.EF\Mah.Tadbir.DAL.EF.csproj", "{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Interface", "Mah.Tadbir.Interface\Mah.Tadbir.Interface.csproj", "{1AA02457-F3D1-48AE-8440-1F352E37EFD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Interface", "src\Mah.Tadbir.Interface\Mah.Tadbir.Interface.csproj", "{1AA02457-F3D1-48AE-8440-1F352E37EFD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Service", "Mah.Tadbir.Service\Mah.Tadbir.Service.csproj", "{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Service", "src\Mah.Tadbir.Service\Mah.Tadbir.Service.csproj", "{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Specification", "Mah.Tadbir.Specification\Mah.Tadbir.Specification.csproj", "{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Specification", "src\Mah.Tadbir.Specification\Mah.Tadbir.Specification.csproj", "{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
