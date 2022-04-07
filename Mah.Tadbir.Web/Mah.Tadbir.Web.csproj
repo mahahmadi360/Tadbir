@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mah.Tadbir.DAL.EF\Mah.Tadbir.DAL.EF.csproj" />
+    <ProjectReference Include="..\Mah.Tadbir.Service\Mah.Tadbir.Service.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

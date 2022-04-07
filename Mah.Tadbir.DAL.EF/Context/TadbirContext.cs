@@ -5,7 +5,7 @@ namespace Mah.Tadbir.DAL.EF.Context
 {
     public class TadbirContext : DbContext
     {
-        public TadbirContext(DbContextOptions<TadbirContext> options) : base(options)
+        public TadbirContext(DbContextOptions options) : base(options)
         {
 
         }

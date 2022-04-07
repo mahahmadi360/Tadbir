@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Entity", "Mah.Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.DAL.EF", "Mah.Tadbir.DAL.EF\Mah.Tadbir.DAL.EF.csproj", "{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Interface", "Mah.Tadbir.Interface\Mah.Tadbir.Interface.csproj", "{1AA02457-F3D1-48AE-8440-1F352E37EFD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Service", "Mah.Tadbir.Service\Mah.Tadbir.Service.csproj", "{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Specification", "Mah.Tadbir.Specification\Mah.Tadbir.Specification.csproj", "{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA02457-F3D1-48AE-8440-1F352E37EFD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA02457-F3D1-48AE-8440-1F352E37EFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA02457-F3D1-48AE-8440-1F352E37EFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA02457-F3D1-48AE-8440-1F352E37EFD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

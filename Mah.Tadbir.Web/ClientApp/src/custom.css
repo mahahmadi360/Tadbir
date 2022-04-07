@@ -3,6 +3,10 @@ a {
   color: #0366d6;
 }
 
+.btn a,.btn a:hover {
+  color:white;
+}
+
 code {
   color: #E01A76;
 }

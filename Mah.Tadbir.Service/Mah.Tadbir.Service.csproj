@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mah.Tadbir.DAL.EF\Mah.Tadbir.DAL.EF.csproj" />
+    <ProjectReference Include="..\Mah.Tadbir.Interface\Mah.Tadbir.Interface.csproj" />
+    <ProjectReference Include="..\Mah.Tadbir.Specification\Mah.Tadbir.Specification.csproj" />
+  </ItemGroup>
+
+</Project>

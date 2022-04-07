@@ -13,10 +13,10 @@ namespace Mah.Tadbir.Web.Config
             var rootFolder = Directory.GetCurrentDirectory();
             var dbPath = Path.Combine(rootFolder, "Tadbir.Db.mdf");
 
-            services.AddDbContext<TadbirContext>(a=>{
-                new DbContextOptionsBuilder<TadbirContext>()
-                .UseSqlServer($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbPath};Integrated Security=True");
+            services.AddDbContext<DbContext,TadbirContext>(bbContextOptionsBuilder => {
+                bbContextOptionsBuilder.UseSqlServer($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbPath};Integrated Security=True");
             });
+
         }
     }
 }

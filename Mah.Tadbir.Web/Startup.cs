@@ -1,7 +1,7 @@
 using Mah.Tadbir.Web.Config;
+using Mah.Tadbir.Web.ServiceRegistration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +31,10 @@ namespace Mah.Tadbir.Web
             });
 
             services.RegisterDb();
+
+            services.RegisterRepositories();
+
+            services.RegisterServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
