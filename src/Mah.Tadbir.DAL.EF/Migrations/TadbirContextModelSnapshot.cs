@@ -35,7 +35,8 @@ namespace Mah.Tadbir.DAL.EF.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnName("DESCRIPTION")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(MAX)")
+                        .IsUnicode(true);
 
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnName("REGISTER_DATE")
@@ -54,7 +55,8 @@ namespace Mah.Tadbir.DAL.EF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("INVOICE_ID")
+                    b.Property<int>("InvoiceId")
+                        .HasColumnName("INVOICE_ID")
                         .HasColumnType("int");
 
                     b.Property<double>("OffPercent")
@@ -63,7 +65,8 @@ namespace Mah.Tadbir.DAL.EF.Migrations
                         .HasColumnType("float")
                         .HasDefaultValue(0.0);
 
-                    b.Property<int>("STUFF_ID")
+                    b.Property<int>("StuffId")
+                        .HasColumnName("STUFF_ID")
                         .HasColumnType("int");
 
                     b.Property<double>("StuffPrice")
@@ -76,9 +79,9 @@ namespace Mah.Tadbir.DAL.EF.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("INVOICE_ID");
+                    b.HasIndex("InvoiceId");
 
-                    b.HasIndex("STUFF_ID");
+                    b.HasIndex("StuffId");
 
                     b.ToTable("TB_INVOICE_STUFFS");
                 });
@@ -109,16 +112,16 @@ namespace Mah.Tadbir.DAL.EF.Migrations
 
             modelBuilder.Entity("Mah.Tadbir.Entity.InvoiceStuffs", b =>
                 {
-                    b.HasOne("Mah.Tadbir.Entity.Invoice", "Invoice")
+                    b.HasOne("Mah.Tadbir.Entity.Invoice", null)
                         .WithMany("InvoiceStuffs")
-                        .HasForeignKey("INVOICE_ID")
+                        .HasForeignKey("InvoiceId")
                         .HasConstraintName("FK_STUFF_INVOICE_INVOICE")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Mah.Tadbir.Entity.Stuff", "Stuff")
                         .WithMany()
-                        .HasForeignKey("STUFF_ID")
+                        .HasForeignKey("StuffId")
                         .HasConstraintName("FK_STUFF_INVOICE_STUFF")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();

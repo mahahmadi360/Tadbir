@@ -20,7 +20,7 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
 
             builder.Property(a => a.Description)
                 .HasColumnName(ToUnderScore(nameof(Invoice.Description)))
-                .HasColumnType("TEXT")
+                .HasColumnType("nvarchar(MAX)")
                 .IsUnicode(true);
 
             builder.Property(a => a.RegisterDate)
