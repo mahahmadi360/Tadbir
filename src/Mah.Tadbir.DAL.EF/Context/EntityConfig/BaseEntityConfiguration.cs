@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
 {
@@ -17,8 +18,15 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
             builder.HasKey(a => a.Id);
 
 
-            var className = typeof(T).Name.ToUpper();
-            builder.ToTable($"TB_{className}");
+            var className = typeof(T).Name;
+            builder.ToTable($"TB_{ToUnderScore(className)}");
+        }
+
+        protected string ToUnderScore(string input)
+        {
+            var output = Regex.Replace(input, "([A-Z])", "_$0",
+                System.Text.RegularExpressions.RegexOptions.Compiled).ToUpper();
+            return output.StartsWith("_") ? output.Substring(1) : output;
         }
     }
 }

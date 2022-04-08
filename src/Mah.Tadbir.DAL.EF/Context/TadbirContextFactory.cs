@@ -8,7 +8,7 @@ namespace Mah.Tadbir.DAL.EF.Context
     {
         public TadbirContext CreateDbContext(string[] args)
         {
-            var dbPath = @"E:\Developing\Tadbir\Mah.Tadbir\Mah.Tadbir.Web\Tadbir.Db.mdf";
+            var dbPath = @"E:\Developing\Tadbir\Mah.Tadbir\src\Mah.Tadbir.Web\Tadbir.Db.mdf";
 
             var contextOptionBuilder = new DbContextOptionsBuilder<TadbirContext>()
              .UseSqlServer($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbPath};Integrated Security=True");

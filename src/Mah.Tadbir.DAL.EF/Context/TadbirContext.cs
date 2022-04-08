@@ -13,6 +13,9 @@ namespace Mah.Tadbir.DAL.EF.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new StuffEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new InvoiceStuffsEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new InvoiceEntityConfiguration());
+
         }
     }
 }
