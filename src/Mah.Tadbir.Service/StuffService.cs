@@ -1,4 +1,5 @@
 ﻿using Mah.Tadbir.Entity;
+using Mah.Tadbir.Interface.DAL;
 using Mah.Tadbir.Interface.DAL.Repository;
 using Mah.Tadbir.Interface.Services;
 using Mah.Tadbir.Specification;
@@ -10,24 +11,24 @@ namespace Mah.Tadbir.Service
 {
     public class StuffService : IStuffService
     {
-        private readonly DbContext _DbContext;
+        private readonly IUnitOfWork _UnitOfWork;
         private readonly IStuffRepository _SuffRepository;
 
-        public StuffService(DbContext dbContext, IStuffRepository suffRepository)
+        public StuffService(IUnitOfWork unitOfWork, IStuffRepository suffRepository)
         {
-            this._DbContext = dbContext;
+            this._UnitOfWork = unitOfWork;
             this._SuffRepository = suffRepository;
         }
-        public void Add(Stuff entity)
+        public Task Add(Stuff entity)
         {
             _SuffRepository.Add(entity);
-            _DbContext.SaveChanges();
+            return _UnitOfWork.SaveChangesAsync();
         }
 
-        public void Delete(params Stuff[] entities)
+        public Task Delete(params Stuff[] entities)
         {
             _SuffRepository.Delete(entities);
-            _DbContext.SaveChanges();
+            return _UnitOfWork.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Stuff>> GetAllStuff()
@@ -40,10 +41,10 @@ namespace Mah.Tadbir.Service
             return _SuffRepository.GetData(id);
         }
 
-        public void Update(Stuff entity)
+        public Task Update(Stuff entity)
         {
             _SuffRepository.Update(entity);
-            _DbContext.SaveChanges();
+            return _UnitOfWork.SaveChangesAsync();
         }
     }
 }

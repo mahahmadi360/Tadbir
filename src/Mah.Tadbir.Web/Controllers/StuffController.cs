@@ -33,21 +33,21 @@ namespace Mah.Tadbir.Web.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public void Delete(int id)
+        public Task Delete(int id)
         {
-             _StuffService.Delete(new Stuff() { Id = id });
+             return _StuffService.Delete(new Stuff() { Id = id });
         }
 
         [HttpPut]
-        public void Put(Stuff stuff)
+        public Task Put(Stuff stuff)
         {
-            _StuffService.Update(stuff);
+            return _StuffService.Update(stuff);
         }
 
         [HttpPost]
-        public void Post(Stuff stuff)
+        public Task Post(Stuff stuff)
         {
-            _StuffService.Add(stuff);
+            return _StuffService.Add(stuff);
         }
     }
 }
