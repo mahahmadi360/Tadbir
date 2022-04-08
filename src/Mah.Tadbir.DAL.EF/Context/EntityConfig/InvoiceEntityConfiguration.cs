@@ -20,11 +20,18 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
 
             builder.Property(a => a.Description)
                 .HasColumnName(ToUnderScore(nameof(Invoice.Description)))
-                .HasColumnType("TEXT");
+                .HasColumnType("TEXT")
+                .IsUnicode(true);
 
-            builder.Property(a => a.RegisteerDate)
-                .HasColumnName(ToUnderScore(nameof(Invoice.RegisteerDate)))
+            builder.Property(a => a.RegisterDate)
+                .HasColumnName(ToUnderScore(nameof(Invoice.RegisterDate)))
                 .IsRequired();
+
+            builder.HasMany<InvoiceStuffs>(a=> a.InvoiceStuffs)
+                .WithOne()
+                .HasForeignKey(a=> a.InvoiceId)
+               .HasConstraintName("FK_STUFF_INVOICE_INVOICE")
+               .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

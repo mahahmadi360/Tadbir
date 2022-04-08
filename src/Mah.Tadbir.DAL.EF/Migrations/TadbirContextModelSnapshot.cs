@@ -37,8 +37,8 @@ namespace Mah.Tadbir.DAL.EF.Migrations
                         .HasColumnName("DESCRIPTION")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("RegisteerDate")
-                        .HasColumnName("REGISTEER_DATE")
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnName("REGISTER_DATE")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -110,7 +110,7 @@ namespace Mah.Tadbir.DAL.EF.Migrations
             modelBuilder.Entity("Mah.Tadbir.Entity.InvoiceStuffs", b =>
                 {
                     b.HasOne("Mah.Tadbir.Entity.Invoice", "Invoice")
-                        .WithMany()
+                        .WithMany("InvoiceStuffs")
                         .HasForeignKey("INVOICE_ID")
                         .HasConstraintName("FK_STUFF_INVOICE_INVOICE")
                         .OnDelete(DeleteBehavior.Cascade)

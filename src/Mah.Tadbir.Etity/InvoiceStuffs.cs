@@ -4,7 +4,8 @@ namespace Mah.Tadbir.Entity
 {
     public class InvoiceStuffs : BaseEntity
     {
-        public Invoice Invoice { get; set; }
+        public int InvoiceId { get; set; }
+        public int StuffId { get; set; }
         public Stuff Stuff { get; set; }
 
         private double _StuffQuantity;

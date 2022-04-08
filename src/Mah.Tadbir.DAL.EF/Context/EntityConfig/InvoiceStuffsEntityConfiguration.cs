@@ -25,19 +25,21 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
                .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.StuffQuantity)))
                .IsRequired();
 
+            builder.Property(a => a.InvoiceId)
+                .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.InvoiceId)))
+                .IsRequired();
+
+            builder.Property(a => a.StuffId)
+                .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.StuffId)))
+                .IsRequired();
+
             builder.HasOne(a => a.Stuff)
                 .WithMany()
                 .IsRequired()
-                .HasForeignKey("STUFF_ID")
+                .HasForeignKey(a=> a.StuffId)
                 .HasConstraintName("FK_STUFF_INVOICE_STUFF")
                .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(a => a.Invoice)
-               .WithMany(a => a.InvoiceStuffs)
-               .IsRequired()
-               .HasForeignKey("INVOICE_ID")
-               .HasConstraintName("FK_STUFF_INVOICE_INVOICE")
-               .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

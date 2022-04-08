@@ -7,7 +7,7 @@ namespace Mah.Tadbir.DAL.EF.Context
     {
         public TadbirContext(DbContextOptions options) : base(options)
         {
-
+            this.ChangeTracker.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -3,6 +3,7 @@ using Mah.Tadbir.Interface.DAL;
 using Mah.Tadbir.Interface.DAL.Repository;
 using Mah.Tadbir.Interface.Services;
 using Mah.Tadbir.Specification;
+using Mah.Tadbir.Specification.Invoices;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -38,7 +39,8 @@ namespace Mah.Tadbir.Service
 
         public Task<Invoice> GetInvoiceById(int id)
         {
-            return _InvoiceRepository.GetData(id);
+            return _InvoiceRepository.GetData(new InvoiceByIdIncludeStuffs(id))
+                .FirstAsync();
         }
 
         public Task Update(Invoice entity)

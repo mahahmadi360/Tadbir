@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220408053713_SetUnicodeOnDescription.cs" />
+    <Compile Remove="Migrations\20220408053713_SetUnicodeOnDescription.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="4.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="3.1.23" />

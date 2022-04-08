@@ -18,6 +18,14 @@ export class Home extends Component {
                                         لیست اقلام
                                     </Link>
                                 </button>
+                                <button className="btn btn-primary">
+                                    <Link
+                                        to={{
+                                            pathname: `/invoices`,
+                                        }}
+                                    >
+فاکتور ها                                    </Link>
+                                </button>
       </div>
     );
   }

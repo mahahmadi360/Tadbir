@@ -11,7 +11,7 @@ namespace Mah.Tadbir.Entity
         }
         public string CustomerName { get; set; }
         public string  Description { get; set; }
-        public DateTime RegisteerDate { get; set; }
+        public DateTime RegisterDate { get; set; }
         public IEnumerable<InvoiceStuffs> InvoiceStuffs { get; set; }
     }
 }

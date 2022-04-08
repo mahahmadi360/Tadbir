@@ -8,4 +8,8 @@
     <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="4.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mah.Tadbir.Etity\Mah.Tadbir.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
