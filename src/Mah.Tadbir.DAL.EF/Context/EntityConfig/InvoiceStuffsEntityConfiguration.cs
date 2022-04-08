@@ -33,7 +33,7 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(a => a.Invoice)
-               .WithMany()
+               .WithMany(a => a.InvoiceStuffs)
                .IsRequired()
                .HasForeignKey("INVOICE_ID")
                .HasConstraintName("FK_STUFF_INVOICE_INVOICE")

@@ -9,6 +9,7 @@ namespace Mah.Tadbir.Web.ServiceRegistration
         public static IServiceCollection RegisterServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<IStuffService, StuffService>();
+            serviceCollection.AddScoped<IInvoiceService, InvoiceService>();
             return serviceCollection;
         }
     }
