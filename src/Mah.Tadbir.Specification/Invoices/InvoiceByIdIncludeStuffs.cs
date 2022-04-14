@@ -11,7 +11,7 @@ namespace Mah.Tadbir.Specification.Invoices
         public InvoiceByIdIncludeStuffs( int id)
         {
             Query.Where(a => a.Id == id)
-                .Include(a => a.InvoiceStuffs);
+                .Include(a => a.InvoiceStuffs).ThenInclude(a=> a.Stuff);
         }
     }
 }

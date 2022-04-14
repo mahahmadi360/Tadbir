@@ -111,15 +111,6 @@ export class InvoiceView extends Component {
         const response = await fetch(`api/Invoice/${id}`);
         const data = await response.json();
 
-        const stuffs = await fetch(`api/stuff`);
-        const stuffList = await stuffs.json();
-
-        data.invoiceStuffs.map(
-            (invoiceStuff) =>
-                (invoiceStuff.stuffName = stuffList.find(
-                    (stuff) => stuff.id == invoiceStuff.stuffId
-                ).name)
-        );
         this.setState({ invoice: data, loading: false });
     }
 }

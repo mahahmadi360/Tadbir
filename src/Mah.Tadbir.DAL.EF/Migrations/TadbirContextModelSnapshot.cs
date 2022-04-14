@@ -47,7 +47,7 @@ namespace Mah.Tadbir.DAL.EF.Migrations
                     b.ToTable("TB_INVOICE");
                 });
 
-            modelBuilder.Entity("Mah.Tadbir.Entity.InvoiceStuffs", b =>
+            modelBuilder.Entity("Mah.Tadbir.Entity.InvoiceStuff", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -83,7 +83,7 @@ namespace Mah.Tadbir.DAL.EF.Migrations
 
                     b.HasIndex("StuffId");
 
-                    b.ToTable("TB_INVOICE_STUFFS");
+                    b.ToTable("TB_INVOICE_STUFF");
                 });
 
             modelBuilder.Entity("Mah.Tadbir.Entity.Stuff", b =>
@@ -110,7 +110,7 @@ namespace Mah.Tadbir.DAL.EF.Migrations
                     b.ToTable("TB_STUFF");
                 });
 
-            modelBuilder.Entity("Mah.Tadbir.Entity.InvoiceStuffs", b =>
+            modelBuilder.Entity("Mah.Tadbir.Entity.InvoiceStuff", b =>
                 {
                     b.HasOne("Mah.Tadbir.Entity.Invoice", null)
                         .WithMany("InvoiceStuffs")

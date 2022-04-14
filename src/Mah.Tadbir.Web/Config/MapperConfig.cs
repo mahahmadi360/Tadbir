@@ -23,7 +23,7 @@ namespace Mah.Tadbir.Web.Config
             });
         }
 
-        public static IServiceCollection ConfigMapper(IServiceCollection services)
+        public static IServiceCollection ConfigMapper(this IServiceCollection services)
         {
             var mapper = GetMapperConfiguration().CreateMapper();
 

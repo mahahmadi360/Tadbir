@@ -35,6 +35,8 @@ namespace Mah.Tadbir.Web
             services.RegisterRepositories();
 
             services.RegisterServices();
+
+            services.ConfigMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
