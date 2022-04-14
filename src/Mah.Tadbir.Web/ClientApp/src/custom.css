@@ -20,6 +20,10 @@ a {
   width: 150px;
 }
 
+.td-250{
+    width:250px;
+}
+
 code {
     color: #e01a76;
 }
@@ -28,4 +32,12 @@ code {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+}
+
+.rich-text{
+    width: 500px;
+}
+
+.percent-input{
+    width: 100px;
 }
