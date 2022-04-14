@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Web", "src\Mah.Tadbir.Web\Mah.Tadbir.Web.csproj", "{666ED7AE-4BB9-4D22-A603-8E3F7DAD9D55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mah.Tadbir.Web", "src\Mah.Tadbir.Web\Mah.Tadbir.Web.csproj", "{666ED7AE-4BB9-4D22-A603-8E3F7DAD9D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Entity", "src\Mah.Tadbir.Etity\Mah.Tadbir.Entity.csproj", "{F2D6B83A-1655-4212-B95E-D05A288C831E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mah.Tadbir.Entity", "src\Mah.Tadbir.Etity\Mah.Tadbir.Entity.csproj", "{F2D6B83A-1655-4212-B95E-D05A288C831E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.DAL.EF", "src\Mah.Tadbir.DAL.EF\Mah.Tadbir.DAL.EF.csproj", "{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mah.Tadbir.DAL.EF", "src\Mah.Tadbir.DAL.EF\Mah.Tadbir.DAL.EF.csproj", "{D9F0A0A9-3DDB-495B-B4F5-A33A403F6059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Interface", "src\Mah.Tadbir.Interface\Mah.Tadbir.Interface.csproj", "{1AA02457-F3D1-48AE-8440-1F352E37EFD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mah.Tadbir.Interface", "src\Mah.Tadbir.Interface\Mah.Tadbir.Interface.csproj", "{1AA02457-F3D1-48AE-8440-1F352E37EFD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Service", "src\Mah.Tadbir.Service\Mah.Tadbir.Service.csproj", "{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mah.Tadbir.Service", "src\Mah.Tadbir.Service\Mah.Tadbir.Service.csproj", "{4072B877-CE7B-4F57-BDBC-A2A78C7F00CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Specification", "src\Mah.Tadbir.Specification\Mah.Tadbir.Specification.csproj", "{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mah.Tadbir.Specification", "src\Mah.Tadbir.Specification\Mah.Tadbir.Specification.csproj", "{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7C3D0F4D-E5FC-49B1-BD82-157D61D4DF4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mah.Tadbir.Web.Test", "tests\XUnitTestProject1\Mah.Tadbir.Web.Test.csproj", "{9E42584F-1B83-4135-82B4-AC50437652E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,16 @@ Global
 		{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75ADED7A-FB53-43CE-A719-D15BE1DDA3DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E42584F-1B83-4135-82B4-AC50437652E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E42584F-1B83-4135-82B4-AC50437652E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E42584F-1B83-4135-82B4-AC50437652E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E42584F-1B83-4135-82B4-AC50437652E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E42584F-1B83-4135-82B4-AC50437652E3} = {7C3D0F4D-E5FC-49B1-BD82-157D61D4DF4C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {379E76D5-6962-4ED8-B445-1FC318CA9031}

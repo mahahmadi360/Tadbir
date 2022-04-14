@@ -7,11 +7,11 @@ namespace Mah.Tadbir.Entity
     {
         public Invoice()
         {
-            InvoiceStuffs = new List<InvoiceStuffs>();
+            InvoiceStuffs = new List<InvoiceStuff>();
         }
         public string CustomerName { get; set; }
         public string  Description { get; set; }
         public DateTime RegisterDate { get; set; }
-        public IEnumerable<InvoiceStuffs> InvoiceStuffs { get; set; }
+        public IEnumerable<InvoiceStuff> InvoiceStuffs { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Mah.Tadbir.Entity
 {
-    public class InvoiceStuffs : BaseEntity
+    public class InvoiceStuff : BaseEntity
     {
         public int InvoiceId { get; set; }
         public int StuffId { get; set; }

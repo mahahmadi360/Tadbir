@@ -7,30 +7,30 @@ using System.Text;
 
 namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
 {
-    internal class InvoiceStuffsEntityConfiguration : BaseEntityConfiguration<InvoiceStuffs>
+    internal class InvoiceStuffsEntityConfiguration : BaseEntityConfiguration<InvoiceStuff>
     {
-        public override void Configure(EntityTypeBuilder<InvoiceStuffs> builder)
+        public override void Configure(EntityTypeBuilder<InvoiceStuff> builder)
         {
             base.Configure(builder);
 
             builder.Property(a => a.OffPercent)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.OffPercent)))
+                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.OffPercent)))
                 .HasDefaultValue(0);
 
             builder.Property(a => a.StuffPrice)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.StuffPrice)))
+                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.StuffPrice)))
                 .IsRequired();
 
             builder.Property(a => a.StuffQuantity)
-               .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.StuffQuantity)))
+               .HasColumnName(ToUnderScore(nameof(InvoiceStuff.StuffQuantity)))
                .IsRequired();
 
             builder.Property(a => a.InvoiceId)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.InvoiceId)))
+                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.InvoiceId)))
                 .IsRequired();
 
             builder.Property(a => a.StuffId)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuffs.StuffId)))
+                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.StuffId)))
                 .IsRequired();
 
             builder.HasOne(a => a.Stuff)

@@ -27,7 +27,7 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
                 .HasColumnName(ToUnderScore(nameof(Invoice.RegisterDate)))
                 .IsRequired();
 
-            builder.HasMany<InvoiceStuffs>(a=> a.InvoiceStuffs)
+            builder.HasMany<InvoiceStuff>(a=> a.InvoiceStuffs)
                 .WithOne()
                 .HasForeignKey(a=> a.InvoiceId)
                .HasConstraintName("FK_STUFF_INVOICE_INVOICE")
