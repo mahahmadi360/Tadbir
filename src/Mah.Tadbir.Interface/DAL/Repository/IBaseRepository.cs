@@ -15,6 +15,7 @@ namespace Mah.Tadbir.Interface.DAL.Repository
 
         IQueryable<T> GetData(ISpecification<T> specification);
 
+
         Task<T> GetData(int id);
     }
 }

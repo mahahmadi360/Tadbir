@@ -6,6 +6,7 @@ using Mah.Tadbir.Interface.Services;
 using Mah.Tadbir.Specification;
 using Mah.Tadbir.Specification.Invoices;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -36,6 +37,8 @@ namespace Mah.Tadbir.Service
             {
                 invoiceStuff.Stuff = null;
             }
+
+            entity.RegisterDate = DateTime.Now;
             _InvoiceRepository.Add(entity);
             return _UnitOfWork.SaveChangesAsync();
         }
@@ -49,6 +52,11 @@ namespace Mah.Tadbir.Service
         public async Task<IEnumerable<Invoice>> GetAllInvoice()
         {
             return await _InvoiceRepository.GetData(new TrueSpecification<Invoice>()).ToListAsync();
+        }
+
+        public async Task<IEnumerable<InvoiceInfo>> GetAllInvoiceInfo()
+        {
+            return await _InvoiceRepository.GetInfoData(new TrueSpecification<InvoiceInfo>()).ToListAsync();
         }
 
         public Task<Invoice> GetInvoiceById(int id)
@@ -79,6 +87,7 @@ namespace Mah.Tadbir.Service
             if (notUsedInvoices.Any())
                 _InvoiceStuffRepository.Delete(notUsedInvoices);
 
+            entity.RegisterDate = DateTime.Now;
             _InvoiceRepository.Update(entity);
             await _UnitOfWork.SaveChangesAsync();
 

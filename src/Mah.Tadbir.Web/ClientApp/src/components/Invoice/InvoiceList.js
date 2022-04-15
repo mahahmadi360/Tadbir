@@ -37,55 +37,67 @@ export class InvoiceList extends Component {
                             <th>جمع کل</th>
                             <th>جمع تخفیف</th>
                             <th>قابل پرداخت</th>
+                            <th>توضیحات</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {Invoices.map((Invoice) => 
-                        {
-                            let defults = {stuffCount:0,totalOff:0,totalPrice:0};
-                            Invoice = Object.assign(defults,Invoice);
-                        return (
-                            <tr key={Invoice.id}>
-                                <td>{Invoice.id}</td>
-                                <td>{Invoice.customerName}</td>
-                                <td>{Invoice.registerDate}</td>
-                                <td>{Invoice.stuffCount}</td>
-                                <td>{Invoice.totalPrice}</td>
-                                <td>{Invoice.totalOff}</td>
-                                <td>{Invoice.totalPrice - Invoice.totalOff}</td>
-                                <td>
-                                    <span title={Invoice.description} >توضیحات</span>
-                                    <button className="btn btn-primary">
-                                        <Link
-                                            to={{
-                                                pathname: `/Invoices/View/${Invoice.id}`,
-                                            }}
-                                        >
-                                            مشاهده
-                                        </Link>
-                                    </button>
-                                    <button className="btn btn-primary">
-                                        <Link
-                                            to={{
-                                                pathname: `/Invoices/Edit/${Invoice.id}`,
-                                            }}
-                                        >
-                                            ویرایش
-                                        </Link>
-                                    </button>
+                        {Invoices.map((Invoice) => {
+                            let defults = {
+                                stuffCount: 0,
+                                totalOff: 0,
+                                totalPrice: 0,
+                            };
+                            Invoice = Object.assign(defults, Invoice);
+                            return (
+                                <tr key={Invoice.id}>
+                                    <td>{Invoice.id}</td>
+                                    <td>{Invoice.customerName}</td>
+                                    <td>{Invoice.registerDate}</td>
+                                    <td>{Invoice.stuffCount}</td>
+                                    <td>{Invoice.totalPrice}</td>
+                                    <td>{Invoice.benefitPrice}</td>
+                                    <td>
+                                        {Invoice.totalPrice -
+                                            Invoice.benefitPrice}
+                                    </td>
+                                    <td>
+                                        <span title={Invoice.description}>
+                                            ...
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button className="btn btn-primary">
+                                            <Link
+                                                to={{
+                                                    pathname: `/Invoices/View/${Invoice.id}`,
+                                                }}
+                                            >
+                                                مشاهده
+                                            </Link>
+                                        </button>
+                                        <button className="btn btn-primary">
+                                            <Link
+                                                to={{
+                                                    pathname: `/Invoices/Edit/${Invoice.id}`,
+                                                }}
+                                            >
+                                                ویرایش
+                                            </Link>
+                                        </button>
 
-                                    <button
-                                        className="btn btn-danger"
-                                        onClick={() =>
-                                            this.deleteRecord(Invoice.id)
-                                        }
-                                    >
-                                        حذف
-                                    </button>
-                                </td>
-                            </tr>
-                        )})}
+                                        <button
+                                            className="btn btn-danger"
+                                            onClick={() =>
+                                                this.deleteRecord(Invoice.id)
+                                            }
+                                        >
+                                            حذف
+                                        </button>
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>
@@ -111,7 +123,7 @@ export class InvoiceList extends Component {
 
     async populateInvoiceData() {
         this.setState({ loading: true });
-        const response = await fetch('api/Invoice');
+        const response = await fetch('api/Invoice/info');
         const data = await response.json();
         this.setState({ Invoices: data, loading: false });
     }

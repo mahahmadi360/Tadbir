@@ -32,6 +32,12 @@ namespace Mah.Tadbir.Web.Controllers
             return invoices.Select(a => _Mapper.Map<InvoiceModel>(a));
         }
 
+        [HttpGet("info")]
+        public async Task<IEnumerable<InvoiceInfo>> GetInfo()
+        {
+            return await _InvoiceService.GetAllInvoiceInfo();
+        }
+
         [HttpGet("{id:int}")]
         public async Task<InvoiceModel> Get(int id)
         {

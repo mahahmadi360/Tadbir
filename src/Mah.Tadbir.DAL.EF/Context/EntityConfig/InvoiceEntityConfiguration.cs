@@ -1,9 +1,7 @@
-﻿using Mah.Tadbir.Entity;
+﻿using Mah.Tadbir.DAL.EF.Extensions;
+using Mah.Tadbir.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
 {
@@ -14,25 +12,24 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
             base.Configure(builder);
 
             builder.Property(a => a.CustomerName)
-                .HasColumnName(ToUnderScore(nameof(Invoice.CustomerName)))
+                .HasColumnName(nameof(Invoice.CustomerName).ToUnderScore())
                 .IsRequired()
                 .HasMaxLength(300);
 
             builder.Property(a => a.Description)
-                .HasColumnName(ToUnderScore(nameof(Invoice.Description)))
+                .HasColumnName(nameof(Invoice.Description).ToUnderScore())
                 .HasColumnType("nvarchar(MAX)")
                 .IsUnicode(true);
 
             builder.Property(a => a.RegisterDate)
-                .HasColumnName(ToUnderScore(nameof(Invoice.RegisterDate)))
+                .HasColumnName(nameof(Invoice.RegisterDate).ToUnderScore())
                 .IsRequired();
 
-            builder.HasMany<InvoiceStuff>(a=> a.InvoiceStuffs)
+            builder.HasMany<InvoiceStuff>(a => a.InvoiceStuffs)
                 .WithOne()
-                .HasForeignKey(a=> a.InvoiceId)
+                .HasForeignKey(a => a.InvoiceId)
                .HasConstraintName("FK_STUFF_INVOICE_INVOICE")
                .OnDelete(DeleteBehavior.Cascade);
         }
-
     }
 }

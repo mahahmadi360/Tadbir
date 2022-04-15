@@ -16,6 +16,8 @@ namespace Mah.Tadbir.DAL.EF.Context
             modelBuilder.ApplyConfiguration(new InvoiceStuffsEntityConfiguration());
             modelBuilder.ApplyConfiguration(new InvoiceEntityConfiguration());
 
+            modelBuilder.ApplyConfiguration(new InvoiceInfoEntityConfiguration());
+
         }
     }
 }

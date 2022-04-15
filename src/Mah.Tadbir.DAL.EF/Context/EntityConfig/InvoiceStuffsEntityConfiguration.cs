@@ -1,4 +1,5 @@
-﻿using Mah.Tadbir.Entity;
+﻿using Mah.Tadbir.DAL.EF.Extensions;
+using Mah.Tadbir.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -14,23 +15,23 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
             base.Configure(builder);
 
             builder.Property(a => a.OffPercent)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.OffPercent)))
+                .HasColumnName(nameof(InvoiceStuff.OffPercent).ToUnderScore())
                 .HasDefaultValue(0);
 
             builder.Property(a => a.StuffPrice)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.StuffPrice)))
+                .HasColumnName(nameof(InvoiceStuff.StuffPrice).ToUnderScore())
                 .IsRequired();
 
             builder.Property(a => a.StuffQuantity)
-               .HasColumnName(ToUnderScore(nameof(InvoiceStuff.StuffQuantity)))
+               .HasColumnName(nameof(InvoiceStuff.StuffQuantity).ToUnderScore())
                .IsRequired();
 
             builder.Property(a => a.InvoiceId)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.InvoiceId)))
+                .HasColumnName(nameof(InvoiceStuff.InvoiceId).ToUnderScore())
                 .IsRequired();
 
             builder.Property(a => a.StuffId)
-                .HasColumnName(ToUnderScore(nameof(InvoiceStuff.StuffId)))
+                .HasColumnName(nameof(InvoiceStuff.StuffId).ToUnderScore())
                 .IsRequired();
 
             builder.HasOne(a => a.Stuff)
@@ -39,8 +40,6 @@ namespace Mah.Tadbir.DAL.EF.Context.EntityConfig
                 .HasForeignKey(a=> a.StuffId)
                 .HasConstraintName("FK_STUFF_INVOICE_STUFF")
                .OnDelete(DeleteBehavior.Restrict);
-
         }
-
     }
 }

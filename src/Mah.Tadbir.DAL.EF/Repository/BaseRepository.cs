@@ -1,6 +1,7 @@
 ﻿using Ardalis.GuardClauses;
 using Ardalis.Specification;
 using Ardalis.Specification.EntityFrameworkCore;
+using Mah.Tadbir.DAL.EF.Extensions;
 using Mah.Tadbir.Interface.DAL.Repository;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -57,7 +58,7 @@ namespace Mah.Tadbir.DAL.EF.Repository
 
         private IQueryable<T> ApplySpecification(ISpecification<T> specification)
         {
-            return new SpecificationEvaluator<T>().GetQuery(_Entities.AsQueryable(), specification);
+            return _Entities.AsQueryable().ApplySpecification(specification);
         }
     }
 }

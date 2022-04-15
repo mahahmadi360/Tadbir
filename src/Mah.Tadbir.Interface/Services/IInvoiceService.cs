@@ -12,6 +12,7 @@ namespace Mah.Tadbir.Interface.Services
 
         Task<IEnumerable<Invoice>> GetAllInvoice();
 
+        Task<IEnumerable<InvoiceInfo>> GetAllInvoiceInfo();
         Task<Invoice> GetInvoiceById(int id);
     }
 }
