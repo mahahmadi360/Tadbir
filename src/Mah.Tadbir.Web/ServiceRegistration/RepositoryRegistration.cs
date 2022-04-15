@@ -12,6 +12,7 @@ namespace Mah.Tadbir.Web.ServiceRegistration
             serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
             serviceCollection.AddScoped<IStuffRepository, StuffRepository>();
             serviceCollection.AddScoped<IInvoiceRepository, InvoiceRepository>();
+            serviceCollection.AddScoped<IInvoiceStuffRepository, InvoiceStuffRepository>();
             return serviceCollection;
         }
     }

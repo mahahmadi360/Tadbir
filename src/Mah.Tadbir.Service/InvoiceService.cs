@@ -1,4 +1,5 @@
-﻿using Mah.Tadbir.Entity;
+﻿using Ardalis.GuardClauses;
+using Mah.Tadbir.Entity;
 using Mah.Tadbir.Interface.DAL;
 using Mah.Tadbir.Interface.DAL.Repository;
 using Mah.Tadbir.Interface.Services;
@@ -6,6 +7,7 @@ using Mah.Tadbir.Specification;
 using Mah.Tadbir.Specification.Invoices;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Mah.Tadbir.Service
@@ -14,14 +16,26 @@ namespace Mah.Tadbir.Service
     {
         private readonly IUnitOfWork _UnitOfWork;
         private readonly IInvoiceRepository _InvoiceRepository;
+        private readonly IInvoiceStuffRepository _InvoiceStuffRepository;
 
-        public InvoiceService(IUnitOfWork unitOfWork, IInvoiceRepository invoiceRepository)
+        public InvoiceService(IUnitOfWork unitOfWork,
+            IInvoiceRepository invoiceRepository,
+            IInvoiceStuffRepository invoiceStuffRepository)
         {
             this._UnitOfWork = unitOfWork;
             this._InvoiceRepository = invoiceRepository;
+            this._InvoiceStuffRepository = invoiceStuffRepository;
         }
         public Task Add(Invoice entity)
         {
+            Guard.Against.Null(entity.InvoiceStuffs, nameof(entity.InvoiceStuffs));
+            Guard.Against.Zero(entity.InvoiceStuffs.Count(), nameof(entity.InvoiceStuffs));
+
+            foreach (var invoiceStuff
+                in entity.InvoiceStuffs)
+            {
+                invoiceStuff.Stuff = null;
+            }
             _InvoiceRepository.Add(entity);
             return _UnitOfWork.SaveChangesAsync();
         }
@@ -43,10 +57,31 @@ namespace Mah.Tadbir.Service
                 .FirstAsync();
         }
 
-        public Task Update(Invoice entity)
+        public async Task Update(Invoice entity)
         {
+            Guard.Against.Null(entity.InvoiceStuffs, nameof(entity.InvoiceStuffs));
+            Guard.Against.Zero(entity.InvoiceStuffs.Count(), nameof(entity.InvoiceStuffs));
+
+            foreach (var invoiceStuff
+                in entity.InvoiceStuffs)
+            {
+                invoiceStuff.Stuff = null;
+                if (invoiceStuff.Id > 0)
+                    _InvoiceStuffRepository.Update(invoiceStuff);
+            }
+
+
+            var notUsedInvoices = await _InvoiceStuffRepository.GetData(
+                 new InvoiceStuffByInvoiceIdAndIdNotInRange(entity.Id,
+                 entity.InvoiceStuffs.Select(a => a.Id)
+                 )).ToArrayAsync();
+
+            if (notUsedInvoices.Any())
+                _InvoiceStuffRepository.Delete(notUsedInvoices);
+
             _InvoiceRepository.Update(entity);
-            return _UnitOfWork.SaveChangesAsync();
+            await _UnitOfWork.SaveChangesAsync();
+
         }
     }
 }

@@ -229,7 +229,7 @@ export class InvoiceEditor extends Component {
 
     render() {
         if (this.state.successed) {
-            return <Redirect to="/stuffs" />;
+            return <Redirect to="/invoices" />;
         } else {
             let invoice = this.state.invoice;
             return (
